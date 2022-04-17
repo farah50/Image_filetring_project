@@ -40,12 +40,18 @@ void LowerMirror();
 void Rotate90();
 void Rotate180();
 void Rotate270();
+void Quarter1();
+void Quarter2();
+void Quarter3();
+void Quarter4();
+void Shuffle();
 
 
 int main()
 {
 //    The menu display
     char choice , choice2;
+    string choice3;
 
     cout << "Please select a filter to apply or 0 to exit:\n"
             "1- Black & White Filter\n"
@@ -120,8 +126,20 @@ int main()
         saveImage ();
     }
     else if (choice == '8'){
-
-        saveImage ();
+        cout << "Choose 'q1' for the upper right quarter or\n"
+                "q2 for the upper left quarter or\n"
+                "q3 for the lower right quarter or \n"
+                "q4 for the lower left quarter \n";
+        cin >> choice3;
+        if(choice3 == "q1"){
+            Quarter1();
+        }else if (choice3 == "q2")
+            Quarter2();
+        else if ( choice3 == "q3")
+            Quarter3();
+        else if (choice3 == "q4")
+            Quarter4();
+        saveImage0 ();
     }
     else if (choice == '9'){
 
@@ -146,7 +164,8 @@ int main()
         saveImage ();
     }
     else if (choice == 'b'){
-
+        cout << "Enter the pattern you need.\n";
+//        Shuffle();
         saveImage ();
     }
     else if (choice == 'c'){
@@ -189,10 +208,17 @@ void saveImage () {
 
 // Black and white function
 void ImageBW (){
+    long sum = 0 ,average = 0;
+    for (int i = 0; i < SIZE; i++) {
+        for (int j = 0; j< SIZE; j++) {
+            sum += image[i][j];
+        }
+        average = sum/(SIZE*SIZE);
+    }
     for (int i = 0; i < SIZE; i++) {
         for (int j = 0; j< SIZE; j++) {
 
-            if (image[i][j] > 127)
+            if (image[i][j] > average)
                 image[i][j] = 255;
             else
                 image[i][j] = 0;
@@ -271,7 +297,7 @@ void darken1() {
     for (int i = 0; i < SIZE; i++) {
         for (int j = 0; j< SIZE; j++) {
 
-            image[i][j] = (image[i][j]) /5;
+            image[i][j] = (image[i][j]) /3;
 
         }
     }
@@ -280,9 +306,7 @@ void lighten1() {
 
     for (int i = 0; i < SIZE; i++) {
         for (int j = 0; j< SIZE; j++) {
-
             image[i][j] =  (image[i][j])/2 + 150/2 ;
-
         }
     }
 }
@@ -356,4 +380,68 @@ void Rotate180(){
 void Rotate270(){
     ImageTranspose();
     ImageReverseHorizontal();
+}
+void Quarter1() {
+//
+//    for (int i = 0; i < SIZE / 2; i++) {
+//        for (int j = 0; j < SIZE / 2; j++) {
+//            image3[i][j] = image[i][j];
+//        }
+//    }
+    for(int k = 0, i= 0 ; i<SIZE; k++, i+=2){
+        for (int z = 0 , j = 0 ; j< SIZE; z ++, j +=2){
+            image3[i][j] = image[k][z];
+            image3[i+1][j] = image[k][z];
+            image3[i+1][j+1] = image[k][z];
+            image3[i][j+1] = image[k][z];
+
+        }
+    }
+}
+void Quarter2() {
+//    for (int i = 0; i < SIZE / 2; i++) {
+//        for (int j = SIZE / 2; j < SIZE; j++) {
+//            image3[i][j] = image[i][j];
+//        }
+//    }
+    for (int k = 0, i = 0; i < SIZE; k++, i += 2) {
+        for (int z = 128, j = 0; j < SIZE; z++, j += 2) {
+            image3[i][j] = image[k][z];
+            image3[i + 1][j] = image[k][z];
+            image3[i + 1][j + 1] = image[k][z];
+            image3[i][j + 1] = image[k][z];
+
+        }
+    }
+}
+void Quarter3(){
+//    for (int i = SIZE / 2; i < SIZE ; i++) {
+//        for (int j = 0; j < SIZE / 2; j++) {
+//            image3[i][j] = image[i][j];
+//        }
+//    }
+    for (int k = 128, i = 0; i < SIZE; k++, i += 2) {
+        for (int z = 0, j = 0; j < SIZE; z++, j += 2) {
+            image3[i][j] = image[k][z];
+            image3[i + 1][j] = image[k][z];
+            image3[i + 1][j + 1] = image[k][z];
+            image3[i][j + 1] = image[k][z];
+        }
+    }
+}
+void Quarter4(){
+//    for (int i = SIZE / 2; i < SIZE; i++) {
+//        for (int j = SIZE /2; j < SIZE ; j++) {
+//            image3[i][j] = image[i][j];
+//        }
+//    }
+    for (int k = 128, i = 0; i < SIZE; k++, i += 2) {
+        for (int z = 128, j = 0; j < SIZE; z++, j += 2) {
+            image3[i][j] = image[k][z];
+            image3[i + 1][j] = image[k][z];
+            image3[i + 1][j + 1] = image[k][z];
+            image3[i][j + 1] = image[k][z];
+
+        }
+    }
 }
