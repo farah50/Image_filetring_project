@@ -281,7 +281,7 @@ void lighten1() {
     for (int i = 0; i < SIZE; i++) {
         for (int j = 0; j< SIZE; j++) {
 
-            image[i][j] =  (image[i][j])/2 + (image[100][100])/2 ;
+            image[i][j] =  (image[i][j])/2 + 150/2 ;
 
         }
     }
