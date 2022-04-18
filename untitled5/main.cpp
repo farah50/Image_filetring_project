@@ -466,7 +466,7 @@ void shrinkHalf(){
     }
 }
 
-void shrinkToathird(){
+void shrinkToaThird(){
     for (int i = 0 ; i < SIZE/3; i++){
         for (int j = 0; j < SIZE/3; j++) {
             image3[i][j] = image[i*3][j*3];
