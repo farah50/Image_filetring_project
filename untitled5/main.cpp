@@ -151,7 +151,7 @@ int main()
           shrinkHalf();  
         }
         else if(choice2 == 'y'){
-            shrinkToathird();
+            shrinkToaThird();
         }
         else{
             shrinkQuarter();
