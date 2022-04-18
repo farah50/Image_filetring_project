@@ -19,7 +19,7 @@ using namespace std;
 unsigned char image[SIZE][SIZE];
 unsigned char image2[SIZE][SIZE];
 unsigned char image3[SIZE][SIZE];
-
+//------------------------------------------------------
 void loadImage ();
 void saveImage ();
 void loadImage0();
@@ -45,7 +45,10 @@ void Quarter2();
 void Quarter3();
 void Quarter4();
 void Shuffle();
-
+void shrinkHalf();
+void shrinkToaThird();
+void shrinkQuarter();
+//------------------------------------------------------
 
 int main()
 {
@@ -142,8 +145,18 @@ int main()
         saveImage0 ();
     }
     else if (choice == '9'){
-
-        saveImage ();
+        cout << "choose 't' for shrink to 1/2 or 'y' for shrink to 1/3 0r 'o' for shrink to 1/4\n";
+        cin >> choice2;
+        if(choice2 == 't'){
+          shrinkHalf();  
+        }
+        else if(choice2 == 'y'){
+            shrinkToathird();
+        }
+        else{
+            shrinkQuarter();
+        }
+        saveImage0();
     }
     else if (choice == 'a'){
         cout << "choose 'r' for right mirror ,\n 'f' for left mirror ,\n "
@@ -445,3 +458,26 @@ void Quarter4(){
         }
     }
 }
+void shrinkHalf(){ 
+    for (int i = 0 ; i < SIZE/2; i++){
+        for (int j = 0; j < SIZE/2; j++) {
+            image3[i][j] = image[i*2][j*2];
+        }
+    }
+}
+
+void shrinkToathird(){
+    for (int i = 0 ; i < SIZE/3; i++){
+        for (int j = 0; j < SIZE/3; j++) {
+            image3[i][j] = image[i*3][j*3];
+        }
+    }
+}
+
+void shrinkQuarter(){
+    for (int i = 0 ; i < SIZE/4; i++){
+        for (int j = 0; j < SIZE/4; j++) {
+            image3[i][j] = image[i*4][j*4];
+        }
+    }
+} 
