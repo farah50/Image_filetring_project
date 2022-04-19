@@ -3,7 +3,7 @@
 // Last Modification Date: 4/5/2022
 // Author1 and ID and Group: Sara Tamer Mohamed Bihery - 20210155 - S25
 // Author2 and ID and Group: Farah Mohamed Mohamed El-Sayed - 20210288 - S25
-// Author3 and ID and Group: Laila... - 20211072 - S....
+// Author3 and ID and Group: Laila Abdelaaty Mohammed Abdelaal - 20211072 - S25
 // Teaching Assistant: Eng\ Mohamoud Fateaha
 // Purpose: Making different filters on an image
 
@@ -477,3 +477,459 @@ void shrinkQuarter(){
         }
     }
 } 
+void Shuffle() {
+    int q1, q2, q3, q4, x = 0, y = 0;
+    cin >> q1 >> q2 >> q3 >> q4;
+    if (q1 == 1 && q2 == 2 && q3 == 3 && q4 == 4) {
+        for (int i = 0; i < SIZE; i++) {
+            for (int j = 0; j < SIZE; j++) {
+                image3[i][j] = image[i][j];
+            }
+        }
+    }
+    if (q1 == 1 && q2 == 2 && q3 == 4 && q4 == 3) {
+        for (int i = 0; i < SIZE; i++) {
+            for (int j = 0; j < SIZE; j++) {
+                image3[i][j] = image[i][j];
+            }
+        }
+        for (int i = 128; i < SIZE; i++) {
+            for (int j = 0; j < SIZE / 2; j++) {
+                swap(image3[i][j + 128], image3[i][j]);
+            }
+        }
+    }
+    if (q1 == 1 && q2 == 3 && q3 == 2 && q4 == 4) {
+        for (int i = 0; i < SIZE; i++) {
+            for (int j = 0; j < SIZE; j++) {
+                image3[i][j] = image[i][j];
+            }
+        }
+        for (int k = 128, i = 0; i < SIZE / 2; k++, i++) {
+            for (int z = 0, j = 128; j < SIZE; z++, j++) {
+                swap(image3[i + 1][j], image3[k][z]);
+            }
+        }
+    }
+    if (q1 == 1 && q2 == 3 && q3 == 4 && q4 == 2) {
+        for (int i = 0; i < SIZE; i++) {
+            for (int j = 0; j < SIZE; j++) {
+                image3[i][j] = image[i][j];
+            }
+        }
+        for (int k = 128, i = 0; i < SIZE / 2; k++, i++) {
+            for (int z = 0, j = 128; j < SIZE; z++, j++) {
+                swap(image3[i + 1][j], image3[k][z]);
+            }
+        }
+        for (int i = 128; i < SIZE; i++) {
+            for (int j = 0; j < SIZE / 2; j++) {
+                swap(image3[i][j + 128], image3[i][j]);
+            }
+        }
+    }
+    if (q1 == 1 && q2 == 4 && q3 == 3 && q4 == 2) {
+        for (int i = 0; i < SIZE; i++) {
+            for (int j = 0; j < SIZE; j++) {
+                image3[i][j] = image[i][j];
+            }
+        }
+        for (int i = 0; i < SIZE / 2; i++) {
+            for (int j = 128; j < SIZE; j++) {
+                swap(image3[i][j], image3[i + 128][j]);
+            }
+        }
+    }
+    if (q1 == 1 && q2 == 4 && q3 == 2 && q4 == 3) {
+        for (int i = 0; i < SIZE; i++) {
+            for (int j = 0; j < SIZE; j++) {
+                image3[i][j] = image[i][j];
+            }
+        }
+        for (int i = 0; i < SIZE / 2; i++) {
+            for (int j = 128; j < SIZE; j++) {
+                swap(image3[i][j], image3[i + 128][j]);
+            }
+        }
+        for (int i = 128; i < SIZE; i++) {
+            for (int j = 0; j < SIZE / 2; j++) {
+                swap(image3[i][j + 128], image3[i][j]);
+            }
+        }
+    }
+    if (q1 == 2 && q2 == 1 && q3 == 3 && q4 == 4) {
+        for (int i = 0; i < SIZE; i++) {
+            for (int j = 0; j < SIZE; j++) {
+                image3[i][j] = image[i][j];
+            }
+        }
+        for (int i = 0; i < SIZE / 2; i++) {
+            for (int j = 0; j < SIZE / 2; j++) {
+                swap(image3[i][j], image3[i][j + 128]);
+            }
+        }
+    }
+    if (q1 == 2 && q2 == 3 && q3 == 4 && q4 == 1) {
+        for (int i = 0; i < SIZE; i++) {
+            for (int j = 0; j < SIZE; j++) {
+                image3[i][j] = image[i][j];
+            }
+        }
+        for (int i = 0; i < SIZE / 2; i++) {
+            for (int j = 0; j < SIZE / 2; j++) {
+                swap(image3[i][j], image3[i][j + 128]);
+            }
+        }
+        for (int i = 128; i < SIZE; i++) {
+            for (int j = 0; j < SIZE / 2; j++) {
+                swap(image3[i][j + 128], image3[i][j]);
+            }
+        }
+        for (int i = 0; i < SIZE / 2; i++) {
+            for (int j = 128; j < SIZE; j++) {
+                swap(image3[i][j], image3[i + 128][j]);
+            }
+        }
+    }
+    if (q1 == 2 && q2 == 3 && q3 == 1 && q4 == 4) {
+        for (int i = 0; i < SIZE; i++) {
+            for (int j = 0; j < SIZE; j++) {
+                image3[i][j] = image[i][j];
+            }
+        }
+        for (int i = 0; i < SIZE / 2; i++) {
+            for (int j = 0; j < SIZE / 2; j++) {
+                swap(image3[i][j], image3[i][j + 128]);
+            }
+        }
+        for (int i = 128; i < SIZE; i++) {
+            for (int j = 0; j < SIZE / 2; j++) {
+                swap(image3[i][j + 128], image3[i][j]);
+            }
+        }
+        for (int i = 0; i < SIZE / 2; i++) {
+            for (int j = 128; j < SIZE; j++) {
+                swap(image3[i][j], image3[i + 128][j]);
+            }
+        }
+        for (int i = 128; i < SIZE; i++) {
+            for (int j = 0; j < SIZE / 2; j++) {
+                swap(image3[i][j + 128], image3[i][j]);
+            }
+        }
+    }
+    if (q1 == 2 && q2 == 1 && q3 == 4 && q4 == 3) {
+        for (int i = 0; i < SIZE; i++) {
+            for (int j = 0; j < SIZE; j++) {
+                image3[i][j] = image[i][j];
+            }
+        }
+        for (int i = 0; i < SIZE / 2; i++) {
+            for (int j = 0; j < SIZE / 2; j++) {
+                swap(image3[i][j], image3[i][j + 128]);
+            }
+        }
+        for (int i = 128; i < SIZE; i++) {
+            for (int j = 0; j < SIZE / 2; j++) {
+                swap(image3[i][j + 128], image3[i][j]);
+            }
+        }
+    }
+    if (q1 == 2 && q2 == 4 && q3 == 3 && q4 == 1) {
+        for (int i = 0; i < SIZE; i++) {
+            for (int j = 0; j < SIZE; j++) {
+                image3[i][j] = image[i][j];
+            }
+        }
+        for (int i = 0; i < SIZE / 2; i++) {
+            for (int j = 0; j < SIZE / 2; j++) {
+                swap(image3[i][j], image3[i][j + 128]);
+            }
+        }
+        for (int i = 0; i < SIZE / 2; i++) {
+            for (int j = 128; j < SIZE; j++) {
+                swap(image3[i][j], image3[i + 128][j]);
+            }
+        }
+    }
+    if (q1 == 2 && q2 == 4 && q3 == 1 && q4 == 3) {
+        for (int i = 0; i < SIZE; i++) {
+            for (int j = 0; j < SIZE; j++) {
+                image3[i][j] = image[i][j];
+            }
+        }
+        for (int i = 0; i < SIZE / 2; i++) {
+            for (int j = 0; j < SIZE / 2; j++) {
+                swap(image3[i][j], image3[i][j + 128]);
+            }
+        }
+        for (int i = 0; i < SIZE / 2; i++) {
+            for (int j = 128; j < SIZE; j++) {
+                swap(image3[i][j], image3[i + 128][j]);
+            }
+        }
+        for (int i = 128; i < SIZE; i++) {
+            for (int j = 0; j < SIZE / 2; j++) {
+                swap(image3[i][j + 128], image3[i][j]);
+            }
+        }
+    }
+    if (q1 == 3 && q2 == 1 && q3 == 2 && q4 == 4) {
+        for (int i = 0; i < SIZE; i++) {
+            for (int j = 0; j < SIZE; j++) {
+                image3[i][j] = image[i][j];
+            }
+        }
+        for (int k = 128, i = 0; i < SIZE / 2; k++, i++) {
+            for (int z = 0, j = 128; j < SIZE; z++, j++) {
+                swap(image3[i + 1][j], image3[k][z]);
+            }
+        }
+        for (int i = 0; i < SIZE / 2; i++) {
+            for (int j = 0; j < SIZE / 2; j++) {
+                swap(image3[i][j], image3[i][j + 128]);
+            }
+        }
+    }
+    if (q1 == 3 && q2 == 1 && q3 == 4 && q4 == 2) {
+        for (int i = 0; i < SIZE; i++) {
+            for (int j = 0; j < SIZE; j++) {
+                image3[i][j] = image[i][j];
+            }
+        }
+        for (int k = 128, i = 0; i < SIZE / 2; k++, i++) {
+            for (int z = 0, j = 128; j < SIZE; z++, j++) {
+                swap(image3[i + 1][j], image3[k][z]);
+            }
+        }
+        for (int i = 128; i < SIZE; i++) {
+            for (int j = 0; j < SIZE / 2; j++) {
+                swap(image3[i][j + 128], image3[i][j]);
+            }
+        }
+        for (int i = 0; i < SIZE / 2; i++) {
+            for (int j = 0; j < SIZE / 2; j++) {
+                swap(image3[i][j], image3[i][j + 128]);
+            }
+        }
+    }
+    if (q1 == 3 && q2 == 2 && q3 == 1 && q4 == 4) {
+        for (int i = 0; i < SIZE; i++) {
+            for (int j = 0; j < SIZE; j++) {
+                image3[i][j] = image[i][j];
+            }
+        }
+        for (int i = 0; i < SIZE / 2; i++) {
+            for (int j = 0; j < SIZE / 2; j++) {
+                swap(image3[i][j], image3[i + 128][j]);
+            }
+        }
+
+    }
+    if (q1 == 3 && q2 == 2 && q3 == 4 && q4 == 1) {
+        for (int i = 0; i < SIZE; i++) {
+            for (int j = 0; j < SIZE; j++) {
+                image3[i][j] = image[i][j];
+            }
+        }
+        for (int i = 0; i < SIZE / 2; i++) {
+            for (int j = 0; j < SIZE / 2; j++) {
+                swap(image3[i][j], image3[i][j + 128]);
+            }
+        }
+        for (int i = 128; i < SIZE; i++) {
+            for (int j = 0; j < SIZE / 2; j++) {
+                swap(image3[i][j + 128], image3[i][j]);
+            }
+        }
+        for (int i = 0; i < SIZE / 2; i++) {
+            for (int j = 128; j < SIZE; j++) {
+                swap(image3[i][j], image3[i + 128][j]);
+            }
+        }
+        for (int i = 0; i < SIZE / 2; i++) {
+            for (int j = 0; j < SIZE / 2; j++) {
+                swap(image3[i][j], image3[i][j + 128]);
+            }
+        }
+    }
+    if (q1 == 3 && q2 == 4 && q3 == 1 && q4 == 2) {
+        for (int i = 0; i < SIZE; i++) {
+            for (int j = 0; j < SIZE; j++) {
+                image3[i][j] = image[i][j];
+            }
+        }
+        for (int i = 0; i < SIZE / 2; i++) {
+            for (int j = 128; j < SIZE; j++) {
+                swap(image3[i][j], image3[i + 128][j]);
+            }
+        }
+        for (int i = 0; i < SIZE / 2; i++) {
+            for (int j = 0; j < SIZE / 2; j++) {
+                swap(image3[i][j], image3[i + 128][j]);
+            }
+        }
+    }
+
+    if (q1 == 3 && q2 == 4 && q3 == 2 && q4 == 1) {
+        for (int i = 0; i < SIZE; i++) {
+            for (int j = 0; j < SIZE; j++) {
+                image3[i][j] = image[i][j];
+            }
+        }
+        for (int i = 0; i < SIZE / 2; i++) {
+            for (int j = 128; j < SIZE; j++) {
+                swap(image3[i][j], image3[i + 128][j]);
+            }
+        }
+        for (int i = 0; i < SIZE / 2; i++) {
+            for (int j = 0; j < SIZE / 2; j++) {
+                swap(image3[i][j], image3[i + 128][j]);
+            }
+        }
+        for (int i = 128; i < SIZE; i++) {
+            for (int j = 0; j < SIZE / 2; j++) {
+                swap(image3[i][j + 128], image3[i][j]);
+            }
+        }
+    }
+
+    if (q1 == 4 && q2 == 1 && q3 == 2 && q4 == 3) {
+        for (int i = 0; i < SIZE; i++) {
+            for (int j = 0; j < SIZE; j++) {
+                image3[i][j] = image[i][j];
+            }
+        }
+        for (int i = 0; i < SIZE / 2; i++) {
+            for (int j = 128; j < SIZE; j++) {
+                swap(image3[i][j], image3[i + 128][j]);
+            }
+        }
+        for (int i = 0; i < SIZE / 2; i++) {
+            for (int j = 0; j < SIZE / 2; j++) {
+                swap(image3[i][j], image3[i][j + 128]);
+            }
+        }
+        for (int i = 128; i < SIZE; i++) {
+            for (int j = 0; j < SIZE / 2; j++) {
+                swap(image3[i][j + 128], image3[i][j]);
+            }
+        }
+    }
+    if (q1 == 4 && q2 == 1 && q3 == 3 && q4 == 2) {
+        for (int i = 0; i < SIZE; i++) {
+            for (int j = 0; j < SIZE; j++) {
+                image3[i][j] = image[i][j];
+            }
+        }
+        for (int i = 0; i < SIZE / 2; i++) {
+            for (int j = 128; j < SIZE; j++) {
+                swap(image3[i][j], image3[i + 128][j]);
+            }
+        }
+        for (int i = 0; i < SIZE / 2; i++) {
+            for (int j = 0; j < SIZE / 2; j++) {
+                swap(image3[i][j], image3[i][j + 128]);
+            }
+        }
+    }
+    if (q1 == 4 && q2 == 2 && q3 == 3 && q4 == 1) {
+        for (int i = 0; i < SIZE; i++) {
+            for (int j = 0; j < SIZE; j++) {
+                image3[i][j] = image[i][j];
+            }
+        }
+        for (int i = 0; i < SIZE / 2; i++) {
+            for (int j = 0; j < SIZE / 2; j++) {
+                swap(image3[i][j], image3[i][j + 128]);
+            }
+        }
+        for (int i = 0; i < SIZE / 2; i++) {
+            for (int j = 128; j < SIZE; j++) {
+                swap(image3[i][j], image3[i + 128][j]);
+            }
+        }
+        for (int i = 0; i < SIZE / 2; i++) {
+            for (int j = 0; j < SIZE / 2; j++) {
+                swap(image3[i][j], image3[i][j + 128]);
+            }
+        }
+    }
+    if (q1 == 4 && q2 == 2 && q3 == 1 && q4 == 3) {
+        for (int i = 0; i < SIZE; i++) {
+            for (int j = 0; j < SIZE; j++) {
+                image3[i][j] = image[i][j];
+            }
+        }
+        for (int i = 0; i < SIZE / 2; i++) {
+            for (int j = 0; j < SIZE / 2; j++) {
+                swap(image3[i][j], image3[i][j + 128]);
+            }
+        }
+        for (int i = 0; i < SIZE / 2; i++) {
+            for (int j = 128; j < SIZE; j++) {
+                swap(image3[i][j], image3[i + 128][j]);
+            }
+        }
+        for (int i = 128; i < SIZE; i++) {
+            for (int j = 0; j < SIZE / 2; j++) {
+                swap(image3[i][j + 128], image3[i][j]);
+            }
+        }
+        for (int i = 0; i < SIZE / 2; i++) {
+            for (int j = 0; j < SIZE / 2; j++) {
+                swap(image3[i][j], image3[i][j + 128]);
+            }
+        }
+    }
+    if (q1 == 4 && q2 == 3 && q3 == 1 && q4 == 2) {
+        for (int i = 0; i < SIZE; i++) {
+            for (int j = 0; j < SIZE; j++) {
+                image3[i][j] = image[i][j];
+            }
+        }
+        for (int i = 0; i < SIZE / 2; i++) {
+            for (int j = 128; j < SIZE; j++) {
+                swap(image3[i][j], image3[i + 128][j]);
+            }
+        }
+        for (int i = 0; i < SIZE / 2; i++) {
+            for (int j = 0; j < SIZE / 2; j++) {
+                swap(image3[i][j], image3[i + 128][j]);
+            }
+        }
+        for (int i = 0; i < SIZE / 2; i++) {
+            for (int j = 0; j < SIZE / 2; j++) {
+                swap(image3[i][j], image3[i][j + 128]);
+            }
+        }
+    }
+    if (q1 == 4 && q2 == 3 && q3 == 2 && q4 == 1) {
+        for (int i = 0; i < SIZE; i++) {
+            for (int j = 0; j < SIZE; j++) {
+                image3[i][j] = image[i][j];
+            }
+        }
+        for (int i = 0; i < SIZE / 2; i++) {
+            for (int j = 128; j < SIZE; j++) {
+                swap(image3[i][j], image3[i + 128][j]);
+            }
+        }
+        for (int i = 0; i < SIZE / 2; i++) {
+            for (int j = 0; j < SIZE / 2; j++) {
+                swap(image3[i][j], image3[i + 128][j]);
+            }
+        }
+        for (int i = 128; i < SIZE; i++) {
+            for (int j = 0; j < SIZE / 2; j++) {
+                swap(image3[i][j + 128], image3[i][j]);
+            }
+        }
+        for (int i = 0; i < SIZE / 2; i++) {
+            for (int j = 0; j < SIZE / 2; j++) {
+                swap(image3[i][j], image3[i][j + 128]);
+            }
+        }
+    }
+}
+
