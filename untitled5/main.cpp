@@ -144,6 +144,25 @@ int main()
             Quarter4();
         saveImage0 ();
     }
+    else if( choice == '9'){
+        cout << "choose 't' for shrink to 1/2 or 'y' for shrink to 1/3 0r 'o' for shrink to 1/4\n";
+        cin >> choice2;
+        if(choice2 == 't'){
+          shrinkHalf();  
+        }
+        else if(choice2 == 'y'){
+            shrinkToaThird();
+        }
+        else{
+            shrinkQuarter();
+        }
+        saveImage0();
+    }
+    else if (choice == 'c'){
+       
+        saveImage ();
+    
+    }
     
     else if (choice == 'a'){
         cout << "choose 'r' for right mirror ,\n 'f' for left mirror ,\n "
@@ -164,22 +183,7 @@ int main()
         saveImage ();
     }
     else if (choice == 'b'){
-        cout << "choose 't' for shrink to 1/2 or 'y' for shrink to 1/3 0r 'o' for shrink to 1/4\n";
-        cin >> choice2;
-        if(choice2 == 't'){
-          shrinkHalf();  
-        }
-        else if(choice2 == 'y'){
-            shrinkToaThird();
-        }
-        else{
-            shrinkQuarter();
-        }
-        saveImage0();
-    }
-    else if (choice == 'c'){
-
-        saveImage ();
+       
     }
     else if (choice == 's'){
 
