@@ -48,6 +48,7 @@ void Shuffle();
 void shrinkHalf();
 void shrinkToaThird();
 void shrinkQuarter();
+void blur();
 //------------------------------------------------------
 
 int main()
@@ -159,8 +160,8 @@ int main()
         saveImage0();
     }
     else if (choice == 'c'){
-       
-        saveImage ();
+        blur();
+        saveImage0();
     
     }
     
@@ -936,4 +937,24 @@ void Shuffle() {
         }
     }
 }
+
+void blur(){
+    long sum = 0 , avg =0 ;
+    for (int i = 0 ; i < SIZE; i++){
+        for (int j = 0; j < SIZE; j++) {
+              sum = 0;
+            for (int k = 0; k < 9; k++){       
+                for ( int m = 0; m < 9 ; m++){
+                               
+                    sum += (image[i+k][j+m]);
+                
+                }
+            }
+            image3[i][j] = sum /81;
+        }
+
+    }
+    
+}
+
 
