@@ -187,7 +187,8 @@ int main()
         saveImage ();
     }
     else if (choice == 'b'){
-       
+        Shuffle();
+        saveImage0();
     }
     else if (choice == 's'){
 
