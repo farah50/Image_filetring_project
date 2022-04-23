@@ -465,6 +465,7 @@ void Quarter4(){
         }
     }
 }
+// function to shrink the image to half
 void shrinkHalf(){ 
     for (int i = 0 ; i < SIZE/2; i++){
         for (int j = 0; j < SIZE/2; j++) {
@@ -473,6 +474,7 @@ void shrinkHalf(){
     }
 }
 
+// function to shrink the image to third its size
 void shrinkToaThird(){
     for (int i = 0 ; i < SIZE/3; i++){
         for (int j = 0; j < SIZE/3; j++) {
@@ -480,6 +482,7 @@ void shrinkToaThird(){
         }
     }
 }
+// function to shrink the image to quarter its size
 
 void shrinkQuarter(){
     for (int i = 0 ; i < SIZE/4; i++){
@@ -534,12 +537,16 @@ void Shuffle() {
             }
         }
     }
+        //     if the user pattern is 1342
+
     if (q1 == 1 && q2 == 3 && q3 == 4 && q4 == 2) {
         for (int i = 0; i < SIZE; i++) {
             for (int j = 0; j < SIZE; j++) {
                 image3[i][j] = image[i][j];
             }
         }
+        //         swap the second and the third then the forth and the second quarters
+
         for (int k = 128, i = 0; i < SIZE / 2; k++, i++) {
             for (int z = 0, j = 128; j < SIZE; z++, j++) {
                 swap(image3[i + 1][j], image3[k][z]);
@@ -551,6 +558,8 @@ void Shuffle() {
             }
         }
     }
+        //     if the user pattern is 1432
+
     if (q1 == 1 && q2 == 4 && q3 == 3 && q4 == 2) {
         for (int i = 0; i < SIZE; i++) {
             for (int j = 0; j < SIZE; j++) {
@@ -563,6 +572,8 @@ void Shuffle() {
             }
         }
     }
+        //     if the user pattern is 1423
+
     if (q1 == 1 && q2 == 4 && q3 == 2 && q4 == 3) {
         for (int i = 0; i < SIZE; i++) {
             for (int j = 0; j < SIZE; j++) {
@@ -580,6 +591,8 @@ void Shuffle() {
             }
         }
     }
+        //     if the user pattern is 2134
+
     if (q1 == 2 && q2 == 1 && q3 == 3 && q4 == 4) {
         for (int i = 0; i < SIZE; i++) {
             for (int j = 0; j < SIZE; j++) {
@@ -592,6 +605,8 @@ void Shuffle() {
             }
         }
     }
+        //     if the user pattern is 2341
+
     if (q1 == 2 && q2 == 3 && q3 == 4 && q4 == 1) {
         for (int i = 0; i < SIZE; i++) {
             for (int j = 0; j < SIZE; j++) {
@@ -955,6 +970,7 @@ void Shuffle() {
         }
     }
 }
+// function to blur the image
 
 void blur(){
     long sum = 0 , avg =0 ;
