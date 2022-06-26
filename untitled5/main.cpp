@@ -8,9 +8,7 @@
 // Purpose: Making different filters on an image
 
 #include <iostream>
-#include <fstream>
 #include <cstring>
-#include <cmath>
 #include "bmplib.cpp"
 
 
@@ -152,7 +150,7 @@ int main()
         cout << "choose 't' for shrink to 1/2 or 'y' for shrink to 1/3 0r 'o' for shrink to 1/4\n";
         cin >> choice2;
         if(choice2 == 't'){
-          shrinkHalf();  
+            shrinkHalf();
         }
         else if(choice2 == 'y'){
             shrinkToaThird();
@@ -165,9 +163,9 @@ int main()
     else if (choice == 'c'){
         blur();
         saveImage0();
-    
+
     }
-    
+
     else if (choice == 'a'){
         cout << "choose 'r' for right mirror ,\n 'f' for left mirror ,\n "
                 "'u' for upper mirror or 'l' for lower mirror\n";
@@ -300,7 +298,7 @@ void loadImage0() {
 //this function to merge image.
 void merge0() {
     for (int i = 0; i < SIZE; i++) {
-        for (int j = 0; j< SIZE; j++) {
+        for (int j = 0; j < SIZE; j++) {
 
             image3[i][j] = (image[i][j] + image2[i][j])/2 ;
 
@@ -324,7 +322,7 @@ void darken1() {
     for (int i = 0; i < SIZE; i++) {
         for (int j = 0; j< SIZE; j++) {
 
-            image[i][j] = (image[i][j]) /3;
+            image[i][j] = (image[i][j]) / 3;
 
         }
     }
@@ -356,7 +354,7 @@ void EdgeDetection(){
             }
             else {
                 image[i][j] = 255;
-                }
+            }
         }
     }
 }
@@ -398,26 +396,26 @@ void LowerMirror(){
 }
 // function to rotate image by 90 degrees clockwise direction
 void Rotate90(){
-          // its done by the two steps below
+    // its done by the two steps below
     ImageTranspose();
     ImageReverseVertical();
 }
 // function to rotate the image 180 degrees clock wise direction
 void Rotate180(){
-       // its done by the two steps below
+    // its done by the two steps below
     ImageReverseVertical();
     ImageReverseHorizontal();
 }
 // function to rotate the image 270 degrees clockwise direction
 void Rotate270(){
-         // its done by the two steps below
+    // its done by the two steps below
     ImageTranspose();
     ImageReverseHorizontal();
 }
 // function to enlage the first quarter
 void Quarter1() {
 
-        // intialized a new image and put each pixel in the real image in pixels of square in the enlaged one
+    // intialized a new image and put each pixel in the real image in pixels of square in the enlaged one
     for(int k = 0, i= 0 ; i<SIZE; k++, i+=2){
         for (int z = 0 , j = 0 ; j< SIZE; z ++, j +=2){
             image3[i][j] = image[k][z];
@@ -430,7 +428,7 @@ void Quarter1() {
 }
 // function to enlage the second quarter
 void Quarter2() {
-        // intialized a new image and put each pixel in the real image in pixels of square in the enlaged one
+    // intialized a new image and put each pixel in the real image in pixels of square in the enlaged one
     for (int k = 0, i = 0; i < SIZE; k++, i += 2) {
         for (int z = 128, j = 0; j < SIZE; z++, j += 2) {
             image3[i][j] = image[k][z];
@@ -443,7 +441,7 @@ void Quarter2() {
 }
 // function to enlage the third quarter
 void Quarter3(){
-        // intialized a new image and put each pixel in the real image in pixels of square in the enlaged one
+    // intialized a new image and put each pixel in the real image in pixels of square in the enlaged one
     for (int k = 128, i = 0; i < SIZE; k++, i += 2) {
         for (int z = 0, j = 0; j < SIZE; z++, j += 2) {
             image3[i][j] = image[k][z];
@@ -455,7 +453,7 @@ void Quarter3(){
 }
 // function to enlage the forth quarter
 void Quarter4(){
-        // intialized a new image and put each pixel in the real image in pixels of square in the enlaged one
+    // intialized a new image and put each pixel in the real image in pixels of square in the enlaged one
     for (int k = 128, i = 0; i < SIZE; k++, i += 2) {
         for (int z = 128, j = 0; j < SIZE; z++, j += 2) {
             image3[i][j] = image[k][z];
@@ -467,7 +465,7 @@ void Quarter4(){
     }
 }
 // function to shrink the image to half
-void shrinkHalf(){ 
+void shrinkHalf(){
     for (int i = 0 ; i < SIZE/2; i++){
         for (int j = 0; j < SIZE/2; j++) {
             image3[i][j] = image[i*2][j*2];
@@ -491,12 +489,13 @@ void shrinkQuarter(){
             image3[i][j] = image[i*4][j*4];
         }
     }
-} 
+}
 // function to shuffle the image with the pattern that the user want
 void Shuffle() {
     int q1, q2, q3, q4, x = 0, y = 0;
+    cout << "Please enter the pattern you want. \n";
     cin >> q1 >> q2 >> q3 >> q4;
-    
+
     //     if the user pattern is 1234
 
     if (q1 == 1 && q2 == 2 && q3 == 3 && q4 == 4) {
@@ -506,7 +505,7 @@ void Shuffle() {
             }
         }
     }
-        //     if the user pattern is 1243
+    //     if the user pattern is 1243
 
     if (q1 == 1 && q2 == 2 && q3 == 4 && q4 == 3) {
         for (int i = 0; i < SIZE; i++) {
@@ -522,7 +521,7 @@ void Shuffle() {
             }
         }
     }
-        //     if the user pattern is 1324
+    //     if the user pattern is 1324
 
     if (q1 == 1 && q2 == 3 && q3 == 2 && q4 == 4) {
         for (int i = 0; i < SIZE; i++) {
@@ -538,7 +537,7 @@ void Shuffle() {
             }
         }
     }
-        //     if the user pattern is 1342
+    //     if the user pattern is 1342
 
     if (q1 == 1 && q2 == 3 && q3 == 4 && q4 == 2) {
         for (int i = 0; i < SIZE; i++) {
@@ -559,7 +558,7 @@ void Shuffle() {
             }
         }
     }
-        //     if the user pattern is 1432
+    //     if the user pattern is 1432
 
     if (q1 == 1 && q2 == 4 && q3 == 3 && q4 == 2) {
         for (int i = 0; i < SIZE; i++) {
@@ -573,7 +572,7 @@ void Shuffle() {
             }
         }
     }
-        //     if the user pattern is 1423
+    //     if the user pattern is 1423
 
     if (q1 == 1 && q2 == 4 && q3 == 2 && q4 == 3) {
         for (int i = 0; i < SIZE; i++) {
@@ -592,7 +591,7 @@ void Shuffle() {
             }
         }
     }
-        //     if the user pattern is 2134
+    //     if the user pattern is 2134
 
     if (q1 == 2 && q2 == 1 && q3 == 3 && q4 == 4) {
         for (int i = 0; i < SIZE; i++) {
@@ -606,7 +605,7 @@ void Shuffle() {
             }
         }
     }
-        //     if the user pattern is 2341
+    //     if the user pattern is 2341
 
     if (q1 == 2 && q2 == 3 && q3 == 4 && q4 == 1) {
         for (int i = 0; i < SIZE; i++) {
@@ -974,22 +973,22 @@ void Shuffle() {
 // function to blur the image
 
 void blur(){
-    long sum = 0 , avg =0 ;
+    long sum = 0 , avg = 0 ;
     for (int i = 0 ; i < SIZE; i++){
         for (int j = 0; j < SIZE; j++) {
-              sum = 0;
-            for (int k = 0; k < 9; k++){       
+            sum = 0;
+            for (int k = 0; k < 9; k++){
                 for ( int m = 0; m < 9 ; m++){
-                               
-                    sum += (image[i+k][j+m]);
-                
+
+                    sum += (image[i + k][j + m]);
+
                 }
             }
             image3[i][j] = sum /81;
         }
 
     }
-    
-} 
+
+}
 
 
